@@ -12,14 +12,12 @@ def change(start, end, amount):
 
 with open("input.txt") as f:
 	for string in f.readlines():
+		lis = string.split(" ")
 		if string[:7] == "turn on":
-			lis = string.split(" ")
 			change(lis[2], lis[4], 1)
 		elif string[:7] == "turn of":
-			lis = string.split(" ")
 			change(lis[2], lis[4], -1)
 		elif string[:7] == "toggle ":
-			lis = string.split(" ")
 			change(lis[1], lis[3], 2)
 
 print(sum(lights.values()))
