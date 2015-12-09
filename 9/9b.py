@@ -14,7 +14,7 @@ with open("input.txt") as f:
 result = 0
 for x in permutations(list(locations)):
 	sum = 0
-	for i in range(len(x)-1):
-		sum += distances[(x[i], x[i+1])]
+	for x,y in zip(x,x[1:]):
+		sum += distances[(x,y)]
 	result = max(result, sum)
 print(result)
