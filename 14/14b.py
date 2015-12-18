@@ -19,6 +19,7 @@ with open("input.txt") as f:
 
 	results = [0]*len(deers)
 	movements = list(map(genMovement, deers))
+	
 	for time in range(1, finish+1):
 		distance = list(map(lambda x: calculate(x, time), movements))
 		results[distance.index(max(distance))] += 1
